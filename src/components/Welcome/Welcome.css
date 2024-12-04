@@ -1,0 +1,54 @@
+/* Centrar todo vertical y horizontalmente */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  /* Estilo del título */
+  .welcome-container h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+  
+  .admin-text {
+    color: red;
+  }
+  
+  /* Contenedor de los íconos */
+  .logos-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .logo-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .logo-item:hover {
+    transform: translateY(-5px); /* Mueve hacia arriba al hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Le da un efecto perro */
+  }
+  
+  .logo-icon {
+    font-size: 60px;
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .logo-item p {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
