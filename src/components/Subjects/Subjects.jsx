@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaArrowLeft, FaTrash } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import './Subjects.css'
 
 function Subjects() {
   const navigate = useNavigate();
