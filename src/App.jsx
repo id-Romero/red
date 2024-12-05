@@ -3,6 +3,7 @@ import Login from './components/Login/Login';
 import Welcome from './components/Welcome/Welcome';
 import './App.css';
 import Subjects from './components/Subjects/Subjects';
+import Students from './components/Students/Students';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path='/materias' element={<Subjects/>} />
-          <Route path='/alumnos' element={<h1>Alumnos</h1>} />
+          <Route path='/alumnos' element={<Students />} />
           <Route path='/calificaciones' element={<h1>Calificaciones</h1>} />
         </Routes>
       </div>
