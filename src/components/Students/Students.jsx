@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaArrowLeft, FaTrash, FaPowerOff } from 'react-icons/fa';
 import Select from 'react-select';
 import { useNavigate } from 'react-router-dom';
+import './Students.css';
 
 function Students() {
     const navigate = useNavigate();
