@@ -4,6 +4,7 @@ import Welcome from './components/Welcome/Welcome';
 import './App.css';
 import Subjects from './components/Subjects/Subjects';
 import Students from './components/Students/Students';
+import Grades from './components/Grades/Grades';
 
 function App() {
   return (

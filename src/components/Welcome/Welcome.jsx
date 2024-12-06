@@ -1,5 +1,5 @@
 import './Welcome.css';
-import { FaBook, FaUserGraduate, FaClipboard } from 'react-icons/fa';
+import { FaBook, FaUserGraduate, FaClipboard, FaPowerOff } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 function Welcome() {
@@ -35,6 +35,13 @@ function Welcome() {
         >
           <FaClipboard className="logo-icon" />
           <p>Calificaciones</p>
+        </div>
+        <div
+          className="logo-item"
+          onClick={() => handleLogoClick('/')}
+        >
+          <FaPowerOff className="logo-icon" />
+          <p>Salir</p>
         </div>
       </div>
     </div>
