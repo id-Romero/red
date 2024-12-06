@@ -1,0 +1,33 @@
+name: Branch and Commit Report
+on:
+  workflow_dispatch:  # Permite ejecutar manualmente el flujo de trabajo
+  schedule:
+    - cron: '0 0 * * 0'  # Mantiene la ejecución automática semanal
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # Obtener todo el historial para todas las ramas
+
+    - name: Generate Branch Report
+      run: |
+        echo "# Branch and Commit Report" > report.md
+        echo "" >> report.md
+        echo "Generated on: $(date)" >> report.md
+        echo "" >> report.md
+        git for-each-ref --sort=-committerdate refs/heads/ --format='## %(refname:short)%0a%(if)%(upstream)%(then)Upstream: %(upstream:short)%0a%(end)Last commit: %(committerdate:relative)%0aAuthor: %(authorname)%0aCommit message: %(subject)%0a' >> report.md
+        echo "" >> report.md
+        echo "## Detailed Commit History" >> report.md
+        git for-each-ref --sort=-committerdate refs/heads/ --format='### %(refname:short)%0a```%0a%(shell git log -n 5 --pretty=format:"%%h - %%s (%%cr) <%%an>" %(refname))%0a```%0a' >> report.md
+
+    - name: Create Issue
+      uses: peter-evans/create-issue-from-file@v4
+      with:
+        title: Branch and Commit Report
+        content-filepath: ./report.md
+        labels: report, automated
+
